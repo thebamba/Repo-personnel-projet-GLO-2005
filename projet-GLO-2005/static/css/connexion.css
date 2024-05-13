@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-img {
+    display: block;
+    width: 400px;
+
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input {
+    display: block;
+    width: 200px;
+
+    line-height: 24px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn {
+    background: #dfe1e5;
+    border: none;
+
+    margin: 10px;
+    margin-top: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 4px;
+
+    font-size: 14px;
+}
+
+.lien{
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+.body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    background-color: #255C74;
+    color: #fff;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: x-large;
+    margin-left: 10px;
+}
+
+img {
+    /* padding-right: 5px; */
+}
+
+p {
+    padding: 10px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{{ url_for('static', filename='js/bookDescription.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bookDescription.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/livre.css"> -->
+
+    <link rel="shortcut icon" href="#"/>
+    <title id="titre_page"></title>
+</head>
+
+<body onload="initialisation_livre({{isbn}}, {{ id_utilisateur }})">
+{% include 'header.html' %}
+<div class="conteneur_livre">
+    <div class="conteneur_milieu">
+        <div id="livre_titre_div">
+            <h1 id="titre"></h1>
+            <button class="aimer_boutton" id="boutton_aimer_livre">Aimer le livre</button>
+        </div>
+        <p id="auteur"></p>
+        <p id="edition_annee"></p>
+        <div id="theme">
+            Thème :
+        </div>
+        <div id="description">
+            <h4>Sommaire</h4>
+            <p id="contenu_description"></p>
+        </div>
+    </div>
+    <div class="conteneur_droite">
+        <div id="n_exemplaire_disponible"></div>
+        <div id="date_form" name="date_form">
+            <h2>Chercher les disponibilités</h2>
+
+            <label for="date_debut">Date début:</label><br>
+            <input type="date" id="date_debut" name="date_debut" onload="initialiser_date()" onchange="obtenir_reservation({{isbn}})"><br>
+            <label for="date_fin">Date fin:</label><br>
+            <input type="date" id="date_fin" name="date_fin" onload="initialiser_date()" onchange="obtenir_reservation({{isbn}})"><br>
+            <!--<input class="boutton_bleu" type="submit" onclick="obtenir_reservation({{isbn}})" value="Chercher">-->
+        </div>
+        <div id="conteneur_livre_disponible">
+        </div>
+
+    </div>
+    <div class="conteneur_gauche">
+        <img id="image"/>
+    </div>
+</div>
+<div class="section_commentaire">
+    <h2>Commentaires</h2>
+    <div class="section_creer_commentaire">
+        <p id="prenom_nom_commentaire"></p>
+        <textarea maxlength="1020" id="ajouter_commentaire" placeholder="Écrire un commentaire." rows="3"></textarea>
+        <button class="boutton_bleu" id="envoyer_commentaire" onclick="envoyer_commentaire({{isbn}})">Envoyer</button>
+    </div>
+    <div class="conteneur_commentaire" id="conteneur_commentaire"></div>
+    <div class="boutton_afficher_plus">
+        <button class="boutton_bleu" id="boutton_afficher_plus" onclick="obtenir_commentaire({{isbn}})"> Afficher plus
+        </button>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliothèque totalement fictive</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/rechercher-livre.css') }}">
+     <script src="{{ url_for('static', filename='js/rechercher-livre.js') }}"></script>
+</head>
+
+<body onload="afficher_catalogue()">
+
+<header class="entete">
+    <div class="left">
+        <img src="../static/image/books.png" alt="App-logo" width="50" height="50">
+        <h1 class="title">Bibliothèque totalement-fictive</h1>
+    </div>
+
+    <button class="bouton-entete" > <a class="lien" href="{{ url_for('connection') }}">Se Deconnecter</a></button>
+    <button class="bouton-entete"><a class="lien" href="{{ url_for('home') }}">Événements</a></button>
+</header>
+
+<div class="parent">
+    <div id="recherche">
+        <p class="recherche">
+            <input type="text" class="titre" id="titre" placeholder="Rechercher par titre">
+            <input type="text" id="auteur" class="auteur" placeholder="Rechercher par auteur">
+            <input type="text" id="theme" class="theme" placeholder="Rechercher par thème">
+            <input type="text" id="edition" class="edition" placeholder="Rechercher par édition">
+            <input type="text" class="annee" id="annee" placeholder="Rechercher par année">
+            <input type="text" class="mots-cles" id="mots-cles" placeholder="Rechercher par mots-clés">
+            <button type="submit" class="submit" id="search" onclick="clique_recherche()">Rechercher</button>
+        </p>
+        
+      {#    <div class="suggestion">
+            <p><u> <b> Nous n'avons pas le livre que vous recherchez ? </b></u></p>
+        </div>
+        <button class="bouton-suggestion">Cliquez pour nous le suggérer.</button> #}
+        
+    </div>
+
+   
+    <div id="Affichage">
+
+        <u><h2>Vous pourriez aimer.</h2></u>
+
+
+
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="horaire">
+        <div class="jour">Dimanche<br>10h à 17h</div>
+        <div class="jour">Lundi<br>8h à 17h</div>
+        <div class="jour">Mardi<br>8h à 17h</div>
+        <div class="jour">Mercredi<br>8h à 17h</div>
+        <div class="jour">Jeudi<br>8h à 17h</div>
+        <div class="jour">Vendredi<br>8h à 17h</div>
+        <div class="jour">Samedi<br>8h à 17h</div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>

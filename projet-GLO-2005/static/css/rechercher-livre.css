@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+
+}
+
+.entete {
+  background-color: #255C74;
+  color: #fff;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+}
+
+#Affichage {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 2%;
+  background-color: white;
+}
+
+.titre {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.auteur {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.theme {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.Édition {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.Année {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.Mots-clés {
+  grid-area: 6 / 1 / 7 / 2;
+}
+
+
+.titre, .auteur, .theme, .edition, .annee, .mots-cles {
+  display: block; /* Permet de s'assurer que chaque champ occupe toute la largeur de la colonne */
+  width: 100%;
+  margin-bottom: 1%;
+  background-color: #dbd8d8;
+  border-radius: 5%;
+  border: none;
+  padding: 5%;
+
+}
+
+.submit, .bouton-suggestion, .bouton-entete {
+  background-color: #9b9b9b; /* Couleur de fond */
+
+  padding: 1%;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10%; /* Bords arrondis */
+
+}
+
+.submit:hover, .bouton-suggestion:hover, .bouton-entete:hover {
+  background-color: #a9a9a9; /* Couleur de fond au survol */
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+
+.suggestion {
+  font-size: 16%;
+  color: #000000;;
+}
+
+
+/* Pour mettre des traits fins entre les différents livres.*/
+.description {
+  border-bottom: 1px solid #ccc;;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 10% 2fr 3fr; /* Ajoute une colonne pour l'image et ajuste la taille des autres colonnes */
+  grid-gap: 1%;
+  align-items: center; /* Centre les éléments verticalement */
+
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 10% 1fr; /* Ajuster selon la taille de l'image souhaitée */
+  grid-gap: 10%; /* Ajuster l'espace entre l'image et le texte */
+  align-items: center;
+}
+
+.description .book-image {
+  width: 10%; /* Définit la largeur de l'image. Assurez-vous que cela correspond à la taille de votre colonne de grille */
+
+  grid-column: 1 / 2;
+  grid-row: 1 / 3; /* L'image s'étendra sur les deux lignes de texte */
+}
+
+
+.description .book-image {
+  width: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2; /* Fait en sorte que l'image s'étende sur deux lignes */
+}
+
+.description h3, .description p {
+  grid-column: 2 / 3;
+}
+
+
+table {
+  font-size: small;
+  color: rgb(255, 255, 255);
+}
+
+
+p {
+  padding: 10px;
+}
+
+
+.footer {
+    background-color: #000;
+    color: #fff;
+
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+
+.horaire {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jour {
+  flex: 1 1 auto; /* Ajustez en fonction de la largeur désirée */
+  padding: 0 1%; /* Espacement entre les colonnes */
+  text-align: left;
+}
+
+.lien{
+    color: white;
+    text-decoration: none;
+}

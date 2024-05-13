@@ -1,0 +1,204 @@
+
+
+.num_livre {
+    font-size: 14px;
+    padding: 0px;
+    margin:0px;
+}
+.conteneur_droite > *{
+    align-content: center;
+    justify-items: center;
+}
+
+#theme > button {
+    color :black;
+    border-radius: 9px;
+    margin-right: 5px;
+    background: white;
+}
+
+.conteneur_livre {
+    display: grid;
+    grid-template-columns: 20% 65% 11%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 1%;
+    margin: 1%;
+}
+#livre_titre_div{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#livre_titre_div > .aimer_boutton{
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.conteneur_milieu {
+    grid-area: 1 / 2 / 2 / 3;
+    align-items: flex-start;
+}
+
+.conteneur_milieu > p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.conteneur_droite {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.conteneur_gauche {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.conteneur_livre > div {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+}
+
+.conteneur_gauche {
+    max-height: 500px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+#image {
+    width: 100%;
+    object-fit: scale-down;
+}
+
+
+#titre {
+    font-size: 44px;
+    margin-bottom: 15px;
+    word-break: break-all;
+    line-height: 1em;
+}
+
+#auteur {
+    font-size: 16px;
+}
+
+#edition_annee {
+    font-size: 16px;
+}
+
+#description {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#contenu_description {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.conteneur_droite {
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#n_exemplaire_disponible {
+    text-align: center;
+}
+
+#reservation {
+
+    font-family: Arial, sans-serif;
+    background-color: #378db3;
+}
+
+body * {
+    font-family: Arial, sans-serif;
+}
+
+.section_commentaire {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: calc(20% + 10px);
+    margin-right: calc(15% - 10px);
+}
+
+.conteneur_commentaire > .commentaire {
+    margin-bottom: 15px;
+    padding: 5px;
+    max-width: 75%;
+    width: auto;
+}
+
+.section_creer_commentaire * {
+    margin: 0px;
+    width: max-content;
+}
+
+.section_creer_commentaire {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+#ajouter_commentaire {
+    display: flex;
+    width: 100%;
+    resize: none;
+    border-radius: 9px;
+    border-style: solid;
+    border-color: #919191;
+}
+
+#envoyer_commentaire {
+    align-self: flex-end;
+}
+
+.conteneur_commentaire {
+    margin: 35px 0px 5px 0px;
+    width: 100%;
+}
+
+.commentaire > p {
+    margin: 0px;
+    padding: 0px;
+    word-break: break-all;
+}
+
+.nom_complet_commentaire {
+    font-size: 16px;
+}
+
+.contenu_commentaire {
+    font-size: 14px;
+}
+
+.boutton_afficher_plus {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+}
+
+#date_form {
+    margin: 2em 0px;
+}
+.form-group{
+    margin: 100px 100px;
+}
+.boutton_bleu {
+    background: #378db3;
+    color: white;
+    border-radius: 4px;
+}

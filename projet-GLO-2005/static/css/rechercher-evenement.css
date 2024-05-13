@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+
+}
+
+.entete {
+  background-color: #255C74;
+  color: #fff;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: x-large;
+
+}
+
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+
+.parent {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto;
+}
+
+#search-container{
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 2%;
+  background-color: white;
+}
+
+#nom {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+#description-evenement {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+#date-evenement {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+
+#date-evenement, #description-evenement, #nom {
+  display: block; /* Permet de s'assurer que chaque champ occupe toute la largeur de la colonne */
+  width: 100%;
+  margin-bottom: 1%;
+  background-color: #dbd8d8;
+  border-radius: 5%;
+  border: none;
+  padding: 5%;
+
+}
+
+.bouton-recherche, .bouton-suggestion, .bouton-entete {
+  background-color: #9b9b9b; /* Couleur de fond */
+  padding: 10px 20px;
+  margin-right: 10px;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 10%; /* Bords arrondis */
+
+}
+
+.bouton-entete:hover {
+  background-color: #a9a9a9; /* Couleur de fond au survol */
+  transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+
+table {
+  font-size: small;
+  color: rgb(255, 255, 255);
+}
+
+
+p {
+  padding: 10px;
+}
+
+
+.footer {
+    background-color: #000;
+    color: #fff;
+
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.horaire {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.jour {
+  flex: 1 1 auto; /* Ajustez en fonction de la largeur désirée */
+  padding: 0 1%; /* Espacement entre les colonnes */
+  text-align: left;
+}

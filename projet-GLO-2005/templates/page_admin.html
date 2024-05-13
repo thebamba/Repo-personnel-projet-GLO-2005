@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/page_admin.css') }}">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <div class="partie">
+        <div class="container">
+            <h2>Ajouter un livre</h2>
+            <form id="ajouter-livre-form">
+                <div class="box">
+                    <label for="isbn">ISBN</label>
+                    <input type="number" id="isbn" name="isbn" required>
+                </div>
+                <div class="box">
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" name="titre" required>
+                </div>
+                <div class="box">
+                    <label for="description_livre">Description</label>
+                    <input type="text" id="description_livre" name="description_livre" required>
+                </div>
+                <div class="box">
+                    <label for="annee_de_parution">Année de parution</label>
+                    <input type="date" id="annee_de_parution" name="annee_de_parution" required>
+                </div>
+                <div class="box">
+                    <label for="edition">Edition</label>
+                    <input type="text" id="edition" name="edition" required>
+                </div>
+                <div class="box">
+                    <label for="image_livre">Image</label>
+                    <input type="number" id="image_livre" name="image_livre" required>
+                </div>
+
+                <div class="my-buttons">
+                    <button type="submit">Ajouter le livre</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <!-- {{ livres }} -->
+            <form id="livre-form">
+                <select id="livre-select" onchange="maj_form_livre()">
+                    <option value="">Sélectionnez un livre</option>
+                    {% for livre in livres %}
+                    <option data-isbn="{{ livre.isbn }}" data-titre="{{ livre.titre }}"
+                        data-description="{{ livre.description }}"
+                        data-annee_de_parution="{{ livre.annee_de_parution }}" data-edition="{{ livre.edition }}"
+                        data-image_id="{{ livre.image_id }}">
+                        {{ livre.titre }} - {{ livre.isbn }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <br><br>
+                <label for="isbn_input">ISBN:</label>
+                <input type="text" id="isbn_input" name="isbn_input">
+                <br><br>
+
+                <label for="titre_input">Titre:</label>
+                <input type="text" id="titre_input" name="titre_input">
+                <br><br>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description_input" name="description_input">
+                <br><br>
+
+                <label for="annee_de_parution">Année de parution:</label>
+                <input type="date" id="annee_de_parution_input" name="annee_de_parution_input">
+                <br><br>
+
+                <label for="edition">Edition:</label>
+                <input type="text" id="edition_input" name="edition_input">
+                <br><br>
+
+                <label for="image">image:</label>
+                <input type="number" id="image_input" name="image_input">
+                <br><br>
+
+                <button type="button" onclick="modifier_livre()">Modifier</button>
+                <button type="button" onclick="supprimer_livre()">Supprimer</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="partie">
+        <div class="container">
+            <h2>Ajouter un evenement</h2>
+            <form id="add-event-form">
+                <div class="box">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="box">
+                    <label for="description_evenement">Description</label>
+                    <input type="text" id="description_evenement" name="description_evenement" required>
+                </div>
+                <div class="box">
+                    <label for="organisateur">Organisateur</label>
+                    <input type="text" id="organisateur" name="organisateur" required>
+                </div>
+                <div class="box">
+                    <label for="date_evenement">Date de l'evenement</label>
+                    <input type="date" id="date_evenement" name="date_evenement" required>
+                </div>
+                <div class="box">
+                    <label for="image_evenement">Image</label>
+                    <input type="number" id="image_evenement" name="image_evenement" required>
+                </div>
+                <div class="box">
+                    <label for="n_participants_max">Nombre de place</label>
+                    <input type="number" id="n_participants_max" name="n_participants_max" required>
+                </div>
+                <div class="box">
+                    <label for="lieu">Lieu</label>
+                    <input type="text" id="lieu" name="lieu" required>
+                </div>
+
+                <div class="my-buttons">
+                    <button type="submit">Ajouter le l'evenement</button>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <!-- {{ evenements }} -->
+            <form id="evenement-form">
+                <select id="evenement-select" onchange="maj_form_evenement()">
+                    <option value="">Sélectionnez un evenement</option>
+                    {% for evenement in evenements %}
+                    <option data-evenement_id="{{ evenement.evenement_id }}" data-nom="{{ evenement.nom }}" data-description="{{ evenement.description }}"
+                        data-organisateur="{{ evenement.organisateur }}"
+                        data-date_evenement="{{ evenement.date_evenement }}" data-n_participant_max="{{ evenement.n_participant_max }}"
+                        data-image_id="{{ evenement.image_id }}" data-lieu="{{ evenement.lieu }}">
+                        {{ evenement.nom }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br><br>
+
+                <label for="evenement_id">id:</label>
+                <input type="text" id="evenement_id_input" name="evenement_id_input" readonly>
+                <br><br>
+
+                <label for="nom_evenement">Nom:</label>
+                <input type="text" id="nom_evenement_input" name="nom_evenement_input">
+                <br><br>
+
+                <label for="description">Description:</label>
+                <input type="text" id="description_evenement_input" name="description_evenement_input">
+                <br><br>
+
+                <label for="organisateur">Organisateur:</label>
+                <input type="text" id="organisateur_input" name="organisateur_input">
+                <br><br>
+
+                <label for="date_evenement">Date de l'evenement:</label>
+                <input type="date" id="date_evenement_input" name="date_evenement_input">
+                <br><br>
+
+                <label for="image">Image:</label>
+                <input type="number" id="image_evenement_input" name="image_evenement_input">
+                <br><br>
+
+                <label for="n_place">Nombre de place:</label>
+                <input type="number" id="n_participants_max_input" name="n_participants_max_input">
+                <br><br>
+
+                <label for="lieu">Lieu:</label>
+                <input type="text" id="lieu_input" name="lieu_input">
+                <br><br>
+
+                <button type="button" onclick="modifier_evenement()">Modifier</button>
+                <button type="button" onclick="supprimer_evenement()">Supprimer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- {% include 'footer.html' %} -->
+
+    <script src="{{ url_for('static', filename='js/page_admin.js') }}"></script>
+</body>
+
+</html>

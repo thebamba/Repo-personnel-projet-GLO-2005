@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bibliothèque totalement fictive</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/rechercher-evenement.css') }}">
+</head>
+<body>
+
+<header class="entete">
+    <div class="left">
+        <img src="../static/image/books.png" alt="App-logo" width="50" height="50">
+        <h1 class="title">Bibliothèque totalement fictive</h1>
+    </div>
+    <div>
+        <!--<button class="bouton-entete"><a class="lien" href="{{ url_for('home') }}">Se connecter</a></button>-->
+        <button class="bouton-entete"><a class="lien" href="{{ url_for('page_membre') }}">Catalogue</a></button> {#lien a faire#}
+
+    </div>
+</header>
+
+<div class="parent">
+    <div class="recherche">
+         <p class="recherche">
+        <input type="text" id="nom" placeholder="Rechercher le nom de l'événement">
+        <input type="text" id="description-evenement" placeholder="Mots clés de l'événement">
+        <input type="text" id="date-evenement" placeholder="Date (YYYY-MM-DD)">
+        <button type="button" id="rechercher" class="bouton-recherche" onclick="clique_recherche()">Rechercher</button>
+         </p>
+    </div>
+
+    <div id="search-container"></div>
+</div>
+
+<footer class="footer">
+    <div class="horaire">
+        <div class="jour">Dimanche<br>10h à 17h</div>
+        <div class="jour">Lundi<br>8h à 17h</div>
+        <div class="jour">Mardi<br>8h à 17h</div>
+        <div class="jour">Mercredi<br>8h à 17h</div>
+        <div class="jour">Jeudi<br>8h à 17h</div>
+        <div class="jour">Vendredi<br>8h à 17h</div>
+        <div class="jour">Samedi<br>8h à 17h</div>
+    </div>
+</footer>
+
+<script src="../static/js/rechercher-evenement.js"></script>
+</body>
+</html>

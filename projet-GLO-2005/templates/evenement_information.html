@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{{ url_for('static', filename='js/evenement_information.js') }}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/evenement_information.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/livre.css"> -->
+    <link rel="shortcut icon" href="#"/>
+    <title id="titre_page"></title>
+</head>
+
+<body onload="initialisation_evenement({{evenement_id}}, '{{ session['id'] }}')">
+{% include 'header.html' %}
+<h1 id="evenement_nom"></h1>
+<p id="evenement_organisateur"></p>
+<p id="evenement_lieu"></p>
+<p id="evenement_description"></p>
+<div id="liste_date">
+    <p id="date_evenement"></p>
+    <button>Participer</button>
+    <p id="n_participant"></p>
+</div>
+<img id="evenement_image">
+
+<div class="section_commentaire">
+    <h2>Commentaires</h2>
+    <div class="section_creer_commentaire">
+        <p id="prenom_nom_commentaire"></p>
+        <textarea id="ajouter_commentaire" placeholder="Écrire un commentaire." rows="3"></textarea>
+        <button class="boutton_bleu" id="envoyer_commentaire" onclick="envoyer_commentaire({{isbn}})">Envoyer</button>
+    </div>
+    <div class="conteneur_commentaire" id="conteneur_commentaire"></div>
+    <div class="boutton_afficher_plus">
+        <button class="boutton_bleu" id="boutton_afficher_plus" onclick="obtenir_commentaire({{isbn}})"> Afficher plus
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
